@@ -14,6 +14,7 @@ import ManageProducts from "./pages/admin/ManageProducts";
 import ManageOrders from "./pages/admin/ManageOrders";
 import NotFound from "./pages/NotFound";
 import useAuth from "./context/useAuth";
+import Footer from "./components/Footer";
 
 function CartScope({ children }) {
   const { user } = useAuth();
@@ -59,6 +60,7 @@ export default function App() {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
+            <Footer/>
           </div>
         </CartScope>
       </AuthProvider>

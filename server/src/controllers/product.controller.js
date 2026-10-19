@@ -16,7 +16,7 @@ export const getProducts = async (req, res) => {
   const filter = {};
 
   if (typeof search === 'string' && search.trim()) {
-    filter.name = { $regax: escapeRegex(search.trim()), $option: "1" }
+    filter.name = { $regex: escapeRegex(search.trim()), $options: "i" }
   }
   if (category && typeof category === 'string') {
     filter.category = category;
